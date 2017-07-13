@@ -94,7 +94,7 @@ set_optional_property() {
 associate_mysql() {
 
     # Use linked container if specified
-    if [ -n "$MYSQL_NAME" ]; then
+    if [ -n "$MYSQL_HOSTNAME" ]; then
         MYSQL_HOSTNAME="$MYSQL_PORT_3306_TCP_ADDR"
         MYSQL_PORT="$MYSQL_PORT_3306_TCP_PORT"
     fi
@@ -188,7 +188,7 @@ END
 associate_postgresql() {
 
     # Use linked container if specified
-    if [ -n "$POSTGRES_NAME" ]; then
+    if [ -n "$POSTGRES_HOSTNAME" ]; then
         POSTGRES_HOSTNAME="$POSTGRES_PORT_5432_TCP_ADDR"
         POSTGRES_PORT="$POSTGRES_PORT_5432_TCP_PORT"
     fi
@@ -363,7 +363,7 @@ mkdir -p "$GUACAMOLE_LIB"
 #
 
 # Use linked container for guacd if specified
-if [ -n "$GUACD_NAME" ]; then
+if [ -n "$GUACD_HOSTNAME" ]; then
     GUACD_HOSTNAME="$GUACD_PORT_4822_TCP_ADDR"
     GUACD_PORT="$GUACD_PORT_4822_TCP_PORT"
 fi
